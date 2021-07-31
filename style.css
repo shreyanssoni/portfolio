@@ -1,0 +1,250 @@
+:root {
+    --main-white: #f0f0f0;
+    --main-red: #be3144;
+    --main-blue: #45567d;
+    --main-gray: #303841;
+  }
+
+*{
+      margin: 0;
+      padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#navbar {
+    background: var(--main-red);
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+}
+
+nav li{
+    padding: 20px 30px;
+    font-size: 1.3rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+nav li:hover{
+    background: var(--main-blue);
+    transition: 0.3s;
+}
+
+a{
+    text-decoration: none;
+    color: var(--main-white);
+}
+
+#welcome-section{
+    padding-top: 40px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);;
+}
+
+#welcome-section h1{
+    margin-bottom: 8px;
+    font-size: 3rem;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#welcome-section p{
+    padding-bottom: 1.5em;
+    color: var(--main-red);
+    font-size: 2rem;
+    font-style: italic;
+}
+
+#project-section {
+    background: var(--main-blue);
+    height: 100%;
+    text-align: center;
+    padding: 6rem;
+}
+
+#project-header{
+    margin: 0 auto 5rem auto;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 3rem;
+    max-width: 1000px;
+    border-bottom: 0.2rem solid var(--main-white);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.project-common {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    grid-gap:4rem;
+}
+
+.project-image{
+    height: 50vh;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.project-tile:hover img{
+    filter: blur(0.75px);
+}
+
+
+.project-title {
+    margin-top: -5px;
+    width:inherit;
+    z-index: 1;
+    background: var(--main-gray);
+    padding: 1rem 1.5rem; 
+    font-size: 1.5rem;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+}
+
+#project-button{
+    display: inline-block;
+    color: white;
+    margin-top: 4rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    background: var(--main-gray);
+}
+#project-button i{
+    margin-left: 10px;
+    margin-top: 4px;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+}
+
+#project-button:hover{
+    background: var(--main-red);
+}
+#project-button:hover i{
+    transform: translateX(2px);
+}
+
+footer{
+    border-top: 4px solid var(--main-red);
+    background: var(--main-gray);
+}
+footer> p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1.5rem;
+}
+
+#contact{
+    background: var(--main-gray);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    color: var(--main-white);
+    height: 80vh;
+    width: 100%;
+}
+
+#contact > p{
+    font-size: 4rem;
+    margin-top: 1em;
+    padding: 10px;
+}
+
+#contact > h3{
+    font-size: 1rem;
+    font-style: italic;
+}
+
+#contact-details {
+    display: flex;
+    justify-content: center;
+    margin: 3vh auto;
+    padding: 5vh;    
+    width: 100%;
+}
+
+.details {
+    padding: 5vh;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 1px #1f1f1f;
+}
+
+.details:hover{
+    color:var(--main-red);
+    transition: 0.5s;
+    font-size: 155%;
+}
+
+@media (max-width: 500px) {
+
+    #navbar{
+        justify-content: center;
+    }
+    #navbar li{
+        padding: 10px;
+        font-size: 1rem;
+    }
+    #welcome-section h1{
+        font-size: 9vw;
+    }
+    #welcome-section p{
+        font-size: 5vw;
+    }
+    .project-common{
+        grid-template-columns: 1fr;               
+    }
+    #project-header{
+        font-size: 120%;
+    }
+    
+}
+
+@media (max-width: 1050px) {
+    #contact > p{
+        font-size:2.5rem;
+    }
+    #contact {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 0;
+    }
+    #contact-details{
+        /* flex-wrap: wrap; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .details{
+        padding: 2vh; 
+    }
+}
